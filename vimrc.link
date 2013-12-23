@@ -1,0 +1,87 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim Configuration File
+" Sam Gagnard - December 19, 2013
+" Updates:
+" 12/19/13 - Initial Creation
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" This is pathogen doing it's thing to install any plugins
+" located in ~/.vim/bundle. (Just extract new plugins to this
+" location and they will be added to the vim runtimepath.
+" Any specific plugins could be added via:
+" call pathogen#infect('bundle/{}, '~/src/vim/bundle/{}') e.g.
+"
+call pathogen#infect()
+
+" Basic formatting stuff 
+set ruler
+set cursorline
+syntax on
+syntax enable
+
+" Enable filetype plugins
+filetype plugin indent on
+
+" Use Solarized color theme 
+let g:solarized_termtrans = 1
+set background=dark
+colorscheme solarized
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General Configuration 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Set no. lines to the cursor - when moving vertically using j/k
+set so=1
+
+" Height of the command bar
+set cmdheight=2
+
+" When searching try to be smart about cases 
+set smartcase
+
+" Highlight search results
+set hlsearch
+
+" Show matching brackets when text indicator is over them
+set showmatch
+
+" How many tenths of a second to blink when matching brackets
+set mat=2
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Text, tab and indent related
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
+" Use spaces instead of tabs
+set expandtab
+
+" Be smart when using tabs ;)
+set smarttab
+
+" 1 tab == 4 spaces
+set shiftwidth=4
+set tabstop=4
+
+" Linebreak on 500 characters
+" set lbr
+" set tw=500
+
+set ai "Auto indent
+set si "Smart indent
+set wrap "Wrap lines
+
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+
+" Remember info about open buffers on close
+set viminfo^=%
+
+

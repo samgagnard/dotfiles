@@ -1,0 +1,5 @@
+[user]
+	name = Sam Gagnard
+	email = sam.gagnard@gmail.com
+[credential]
+	helper = osxkeychain

@@ -1,0 +1,75 @@
+#==============================================================
+# SET UP BASIC ALIASES
+alias ls ls -Gp
+alias lsl ls -ltrp
+alias lsa ls -a
+alias ll "clear; ls -ltr"
+alias rm rm -i
+alias ssh ssh -XY
+alias rmf rm -f 
+alias aquamacs open -a aquamacs
+alias emacs open -a Emacs
+alias emacsnw /usr/bin/emacs -nw 
+
+# ALIASES TO QUICKLY KILL THE DASHBOARD / RECYCLE DOCK
+alias dashoff 'defaults write com.apple.dashboard mcx-disabled -boolean YES ; \
+sleep 2 ; killall Dock ; echo Dashboard disabled.'
+alias dashon 'defaults write com.apple.dashboard mcx-disabled -boolean NO ; \
+sleep 2 ; killall Dock ; echo Dashboard enabled.' 
+alias work 'ssh -X gagnard@opsray'
+alias workl 'ssh -X ldex-ops@winl25'
+alias doy date -u +%Y/%j-%H:%M:%S
+
+# Some local variables 
+set work="gagnard@opsray"
+set docs="~/Documents"
+set pics="~/Pictures"
+
+# SVN locations that are common 
+set socsvn=~/SVN/LADEE/soc/socrepo/
+set mocsvn=~/SVN/LADEE/moc/flight/
+
+#==============================================================
+# MATLAB startup/directory setup
+setenv MATLAB_DIR /Users/gagnard/Documents/MATLAB/
+alias matlab "cd $MATLAB_DIR ; /Users/gagnard/Applications/MATLAB_R2012a.app/bin/matlab"
+
+#==============================================================
+# Clark's website domain
+set meriwetherftp="muphrid.dreamhost.com"
+
+#==============================================================
+# Updates to path for user code, dev etc
+#setenv PATH /usr/local/Trolltech/Qt-4.7/bin:$PATH
+setenv PATH /Users/gagnard/code:$PATH
+setenv PATH /Users/gagnard:$PATH
+
+#==============================================================
+# IDL startup items
+#setenv IDL_PATH /Users/gagnard/IDLWorkspace81/Default/science_tools/:$IDL_PATH
+#setenv PATH /Users/gagnard/IDLWorkspace81/Default/:$PATH
+#set idl="/Applications/itt/idl/idl81"
+#set idldir="/Applications/exelis/idl/"
+
+setenv IDL_STARTUP ~/IDLWorkspace82/startup.pro
+alias idl /Applications/exelis/idl/bin/idl
+alias idlde /Applications/exelis/idl/bin/idlde
+
+#==============================================================
+# Other env variables 
+setenv SVN_EDITOR /usr/bin/emacs
+
+# rsync for samgagnard.com on dreamhost 
+#alias rsyncdreamhost "rsync --filter '- .git' -e ssh -av /Users/gagnard/Dropbox/Public/samgagnard.com sgagnard@benjamin-rush.dreamhost.com:"
+alias rsyncdreamhost rsync --exclude ".git/" -e ssh -av /Users/gagnard/Dropbox/Public/samgagnard.com sgagnard@benjamin-rush.dreamhost.com:
+
+#==============================================================
+##
+# Your previous /Users/gagnard/.tcshrc file was backed up as /Users/gagnard/.tcshrc.macports-saved_2013-05-22_at_09:16:43
+##
+# MacPorts Installer addition on 2013-05-22_at_09:16:43: adding an appropriate PATH variable for use with MacPorts.
+setenv PATH /opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+# SVN and SSL paths - commented out in favor of macports install locations above
+#setenv PATH /usr/local/ssl/bin:$PATH
+#setenv PATH /usr/local/bin:$PATH
