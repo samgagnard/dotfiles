@@ -6,6 +6,6 @@ These are my personal dotfiles and are a bit sparse at the moment (work in progr
 
 ## References
 
-- Unofficial dotfiles guide at [here](http://dotfiles.github.io)
+- [This](http://dotfiles.github.io) "unofficial" dotfiles guide
 - Lots of good stuff by [holman](https://github.com/holman)
 - Very useful bash template by [thcipriani](https://github.com/thcipriani)
