@@ -60,7 +60,7 @@ source $ZSH/oh-my-zsh.sh
 export DOTFILES="$HOME/.dotfiles"
 
 # Source any associated .zsh files in the file hierarchy
-for file in $DOTFILES/zsh/*.zsh ; do 
+for file in $DOTFILES/**/*.zsh ; do 
     [ -r "$file" ] && source "$file"
 done
 unset file
