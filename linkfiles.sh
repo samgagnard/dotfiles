@@ -17,7 +17,7 @@
 
 set -e # for good practice
 
-# Function template adapted from: 
+# Very helpful bash/function template adapted from: 
 # https://github.com/thcipriani/bashtemplate
 
 ## Variable definitions
@@ -41,7 +41,7 @@ usage() {
     This program will symlink all the *.link files within the .dotfiles hierarchy
     into the user's home directory. If nonlink versions are found, the user is 
     prompted to either skip or replace the existing file. Previous versions are
-    backed up within the current directory. 
+    backed up within the home directory with unique filenames. 
 
     OPTIONS:
             -h|--help           Display help message
