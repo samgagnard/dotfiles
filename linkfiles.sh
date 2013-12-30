@@ -3,8 +3,8 @@
 # AUTHOR: Sam Gagnard
 #
 # DESCRIPTION: 
-#    Links the *.link files in dotfiles directory to user home directory. Script
-#    will prompt to skip/overwrite any existing versions. 
+#     Links the *.link files in dotfiles directory to user home directory. Script
+#     will prompt to skip/overwrite any existing versions. 
 #
 # USAGE: 
 #     linkfiles.sh [--h|help]
@@ -12,13 +12,15 @@
 # OPTIONS
 #     -h|--help     Show the usage message
 #
+# REFERENCES: 
+#     Very helpful bash/function template adapted from Tyler Cipriani: 
+#     https://github.com/thcipriani/bashtemplate
+#     See doc/bash-template.license
+
 # NOTES: 
 #--------------------------------------------------------------------------------
 
 set -e # for good practice
-
-# Very helpful bash/function template adapted from: 
-# https://github.com/thcipriani/bashtemplate
 
 ## Variable definitions
 
