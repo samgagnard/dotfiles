@@ -1,3 +1,6 @@
+# Save the original login path
+export LOGINPATH=$PATH
+
 # Prepend path with personal stuff 
 export PATH="/Users/gagnard/bin:$PATH"
 
