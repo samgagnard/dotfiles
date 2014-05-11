@@ -9,6 +9,7 @@ alias lgrep='ls -ltr | grep -i'
 # Other useful stuff
 alias doy='date -u +%Y/%j-%H:%M:%S'
 alias reset='source ~/.zshrc'
+alias desk='cd ~/Desktop'
 
 # Sequence for quickly killing/resetting the dock
 # I've found this to be occassionally/marginally useful...
