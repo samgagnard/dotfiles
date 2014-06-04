@@ -1,3 +1,6 @@
+#-------------------------------------------------------------------------------
+# oh-my-zsh configuration 
+#-------------------------------------------------------------------------------
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -5,7 +8,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell" # example
+# Example: ZSH_THEME="robbyrussell"
 ZSH_THEME="samgagnard"
 
 # Example aliases
@@ -50,9 +53,14 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-#----------------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # User configuration
+#-------------------------------------------------------------------------------
 
+# Login script 
+source $HOME/bin/init.sh
+
+# UPDATE: PATH is configured within .dotfiles below
 #export PATH="/opt/local/bin:/opt/local/sbin:/Users/gagnard:/Users/gagnard/code:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/opt/ImageMagick/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 

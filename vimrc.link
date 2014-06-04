@@ -5,6 +5,7 @@
 " 12/19/13 - Initial Creation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Note from pathogen: 
 " This is pathogen doing it's thing to install any plugins
 " located in ~/.vim/bundle. (Just extract new plugins to this
 " location and they will be added to the vim runtimepath.
@@ -13,8 +14,9 @@
 "
 call pathogen#infect()
 
-" Basic formatting stuff 
+" General display look/feel 
 set ruler
+set number
 set cursorline
 syntax on
 syntax enable
@@ -23,8 +25,8 @@ syntax enable
 filetype plugin indent on
 
 " Use Solarized color theme 
-let g:solarized_termtrans = 1
-set background=dark
+let g:solarized_termtrans = 1 "for transparent backgrounds
+set background=dark           "set this before colorscheme
 colorscheme solarized
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

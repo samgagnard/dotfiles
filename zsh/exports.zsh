@@ -1,11 +1,10 @@
 # Save the original login path
 export LOGINPATH=$PATH
 
-# Prepend path with personal stuff 
-export PATH="/Users/gagnard/bin:$PATH"
+# User scripts might be in various locations
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/code:$PATH"
+export PATH="$HOME/scripts:$PATH"
 
-# At this point I've still been using MacPorts
+# If using MacPorts, you'll need the /opt/local paths
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-
-# IDL locations
-export IDL_DEFAULT=~/IDLWorkspace82/Default/
