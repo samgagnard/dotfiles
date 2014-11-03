@@ -11,6 +11,11 @@ alias doy='date -u +%Y/%j-%H:%M:%S'
 alias reset='source ~/.zshrc'
 alias desk='cd ~/Desktop'
 alias new='login -pfq $USER'
+alias ssh='ssh -X'
+
+# Scripts 
+alias doy2date='$HOME/scripts/doy2date.sh'
+alias date2doy='$HOME/scripts/date2doy.sh'
 
 # Sequence for quickly killing/resetting the dock
 # I've found this to be occassionally/marginally useful...

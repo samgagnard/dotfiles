@@ -34,12 +34,12 @@ alias ohmyzsh="~/.oh-my-zsh"
 # DISABLE_CORRECTION="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+ COMPLETION_WAITING_DOTS="true"
 
 # Uncomment following line if you want to disable marking untracked files under
 # VCS as dirty. This makes repository status check for large repositories much,
 # much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment following line if you want to  shown in the command execution time stamp 
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
@@ -56,9 +56,6 @@ source $ZSH/oh-my-zsh.sh
 #-------------------------------------------------------------------------------
 # User configuration
 #-------------------------------------------------------------------------------
-
-# Login script 
-source $HOME/bin/init.sh
 
 # UPDATE: PATH is configured within .dotfiles below
 #export PATH="/opt/local/bin:/opt/local/sbin:/Users/gagnard:/Users/gagnard/code:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/opt/ImageMagick/bin"
@@ -84,6 +81,10 @@ unset file
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+ export SSH_KEY_PATH="~/.ssh/id_rsa"
+
+# Login script 
+#[ -r `which init.sh` ] && source init.sh
+[ -r `which new_term.sh` ] && source new_term.sh
 
 

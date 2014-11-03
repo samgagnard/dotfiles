@@ -12,12 +12,14 @@
 " Any specific plugins could be added via:
 " call pathogen#infect('bundle/{}, '~/src/vim/bundle/{}') e.g.
 "
-call pathogen#infect()
+"call pathogen#infect()
+execute pathogen#infect()
 
 " General display look/feel 
-set ruler
 set number
+set ruler
 set cursorline
+set paste
 syntax on
 syntax enable
 
@@ -28,6 +30,9 @@ filetype plugin indent on
 let g:solarized_termtrans = 1 "for transparent backgrounds
 set background=dark           "set this before colorscheme
 colorscheme solarized
+
+" Custom filetype overrides
+au BufNewFile,BufRead *.prc set filetype=cstol " LASP CSTOL
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Configuration 
@@ -59,13 +64,15 @@ set mat=2
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
-" Use spaces instead of tabs
-set expandtab
-
 " Be smart when using tabs ;)
 set smarttab
 
-" 1 tab == 4 spaces
+" Use spaces instead of tabs
+" See http://vim.wikia.com/wiki/Indenting_source_code:
+" For indentation without tabs, the principle is to set 'expandtab', and
+" set 'shiftwidth' and 'softtabstop' to the same value, while leaving
+" 'tabstop' at its default value:
+set expandtab
 set shiftwidth=4
 set tabstop=4
 
