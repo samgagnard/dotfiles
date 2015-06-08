@@ -3,6 +3,7 @@
 " Sam Gagnard - December 19, 2013
 " Updates:
 " 12/19/13 - Initial Creation
+" 12/17/14 - Tabs for .html via autocmd
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Note from pathogen: 
@@ -75,6 +76,9 @@ set smarttab
 set expandtab
 set shiftwidth=4
 set tabstop=4
+
+" File specific tab settings 
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
 
 " Linebreak on 500 characters
 " set lbr
