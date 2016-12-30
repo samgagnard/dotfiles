@@ -84,7 +84,17 @@ unset file
  export SSH_KEY_PATH="~/.ssh/id_rsa"
 
 # Login script 
-#[ -r `which init.sh` ] && source init.sh
-[ -r `which new_term.sh` ] && source new_term.sh
+#[ -r `which new_term` ] && source new_term
+# (no need for timestamp with iterm2 shell integration)
 
+
+# iterm shell integration config
+source ~/.iterm2_shell_integration.`basename $SHELL`
+
+# iterm user variables for badges 
+# zsh: Place this in .zshrc after "source /Users/georgen/.iterm2_shell_integration.zsh".
+iterm2_print_user_vars() {
+  iterm2_set_user_var gitBranch $((git branch 2> /dev/null) | grep \* | cut -c3-)
+  iterm2_set_user_var dateString $(date -u "+%Y/%j-%H:%M:%S")
+}
 

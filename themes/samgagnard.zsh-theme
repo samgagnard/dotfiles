@@ -42,7 +42,8 @@ c6=011
 function ret_status() {
     # Colorize prompt char for return status
     #local ret="%(?:%{$FG[$c1]%}●%{$FG[$c2]%}●%{$FG[$c3]%}●:%{$FG[$c4]%}●%{$FG[$c5]%}●%{$FG[$c6]%}●)"
-    local ret="%(?:%{$FG[$c1]%}〉:%{$FG[$c4]%}✖ )"
+    #local ret="%(?:%{$FG[$c1]%}〉:%{$FG[$c4]%}✖ )"
+    local ret="%(?:%{$FG[$c1]%}:%{$FG[$c4]%}✖ )"
     print "$dc$ret$dc"
 }
 
@@ -55,7 +56,7 @@ function dir_status() {
 # -----------------------------------------------------------------------------
 
 ## Set the left prompt 
-PROMPT='$(dir_status)%$(get_length)<...<%~%<< $(ret_status)' # new colors
+PROMPT='$(dir_status)%$(get_length)<...< %~%<< $(ret_status)' # new colors
 
 ## Set the right prompt 
 RPROMPT='$(print_git)'
@@ -72,8 +73,9 @@ RPROMPT='$(print_git)'
 # ZSH_THEME_GIT_PROMPT_PREFIX="git(%{$fg[green]%}"
 # ZSH_THEME_GIT_PROMPT_DIRTY="%{$reset_color%}) %{$fg[yellow]%}✗ %{$reset_color%}"
 # ZSH_THEME_GIT_PROMPT_CLEAN="%{$reset_color%}) %{$fg[green]%}✔ %{$reset_color%}"
+# ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[magenta]%}"
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[magenta]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[252]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$reset_color%} %{$fg[yellow]%}✗ %{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$reset_color%} %{$fg[green]%}✔ %{$reset_color%}"
@@ -81,7 +83,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$reset_color%} %{$fg[green]%}✔ %{$reset_color%}"
 ## svn status variables
 
 # NOTE: this seems to be verrrrrry slowwww for SVN status
-ZSH_THEME_SVN_PROMPT_PREFIX="svn(%{$fg[magenta]%}"
+ZSH_THEME_SVN_PROMPT_PREFIX="svn(%{$fg[252]%}"
 ZSH_THEME_SVN_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_SVN_PROMPT_DIRTY="%{$reset_color%}) %{$fg[yellow]%}✗ %{$reset_color%}"
 ZSH_THEME_SVN_PROMPT_CLEAN="$%{$reset_color%}) %{$fg[green]%}✔ %{$reset_color%}"

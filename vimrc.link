@@ -1,44 +1,109 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim Configuration File
 " Sam Gagnard - December 19, 2013
-" Updates:
-" 12/19/13 - Initial Creation
-" 12/17/14 - Tabs for .html via autocmd
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Note from pathogen: 
 " This is pathogen doing it's thing to install any plugins
 " located in ~/.vim/bundle. (Just extract new plugins to this
 " location and they will be added to the vim runtimepath.
-" Any specific plugins could be added via:
-" call pathogen#infect('bundle/{}, '~/src/vim/bundle/{}') e.g.
-"
-"call pathogen#infect()
-execute pathogen#infect()
+" Any specific plugins could be added via e.g.
+" call pathogen#infect('bundle/{}, '~/src/vim/bundle/{}')
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Selectively disable individual bundles
+let g:pathogen_disabled = []
+call add(g:pathogen_disabled, 'syntastic')
+call add(g:pathogen_disabled, 'python-mode')
+
+call pathogen#infect()
+call pathogen#helptags()
+
+" Subvert rope issue upon exit with python-mode
+let g:pymode_rope_lookup_project = 0
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General display look/feel 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 set number
 set ruler
-set cursorline
 set paste
+set nocursorline
 syntax on
 syntax enable
+
+" Enable filetype plugins
+filetype plugin on
 
 " Enable filetype plugins
 filetype plugin indent on
 
 " Use Solarized color theme 
-let g:solarized_termtrans = 1 "for transparent backgrounds
-set background=dark           "set this before colorscheme
-colorscheme solarized
+"let g:solarized_termtrans = 1 "for transparent backgrounds
+"set background=dark           "set this before colorscheme
+"colorscheme solarized
+
+" Else use other colorschemes
+"colorscheme default
+colorscheme zellner
+
+" Alter highlight colors 
+hi Search ctermfg=White ctermbg=Red cterm=NONE
+hi Todo ctermbg=0 ctermfg=White
+hi Fixme ctermbg=0 guibg=Black
+hi Note ctermbg=0 guibg=Black
+" Set comment color to bold black index
+hi Comment ctermfg=8 
+" Set string color to bold yellow index
+hi String ctermfg=11
 
 " Custom filetype overrides
 au BufNewFile,BufRead *.prc set filetype=cstol " LASP CSTOL
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" General Configuration 
+" syntastic Configuration 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_python_exec = '/usr/bin/python'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Configure Markdown mode 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"disable support for Jekyll files (enabled by default with: 1)
+let g:markdown_include_jekyll_support = 0 
+
+"enable the fold expression markdown#FoldLevelOfLine 
+let g:markdown_enable_folding = 0 
+
+"disable default mappings (enabled by default with: 1)
+let g:markdown_enable_mappings = 0 
+
+"disable insert mode mappings (enabled by default with: 1)
+let g:markdown_enable_insert_mode_mappings = 0 
+
+"enable insert mode leader mappings (disabled by default with: 0)
+let g:markdown_enable_insert_mode_leader_mappings = 0 
+
+"disable spell checking (enabled by default with: 1)
+let g:markdown_enable_spell_checking = 0 
+
+"disable abbreviations for punctuations and emoticons (enabled by default with: 1)
+let g:markdown_enable_input_abbreviations = 0 
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General Configuration 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set no. lines to the cursor - when moving vertically using j/k
 set so=1
 
@@ -60,7 +125,6 @@ set mat=2
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text, tab and indent related
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
@@ -96,5 +160,4 @@ autocmd BufReadPost *
 
 " Remember info about open buffers on close
 set viminfo^=%
-
 
