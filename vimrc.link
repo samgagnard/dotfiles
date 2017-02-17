@@ -1,6 +1,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim Configuration File
 " Sam Gagnard - December 19, 2013
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Note from pathogen: 
 " This is pathogen doing it's thing to install any plugins
@@ -8,18 +9,21 @@
 " location and they will be added to the vim runtimepath.
 " Any specific plugins could be added via e.g.
 " call pathogen#infect('bundle/{}, '~/src/vim/bundle/{}')
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Installation: 
+"mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+"curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 " Selectively disable individual bundles
 let g:pathogen_disabled = []
-call add(g:pathogen_disabled, 'syntastic')
-call add(g:pathogen_disabled, 'python-mode')
+"call add(g:pathogen_disabled, 'syntastic')
+"call add(g:pathogen_disabled, 'python-mode')
 
 call pathogen#infect()
 call pathogen#helptags()
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Subvert rope issue upon exit with python-mode
-let g:pymode_rope_lookup_project = 0
+"let g:pymode_rope_lookup_project = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General display look/feel 
@@ -56,9 +60,8 @@ hi Note ctermbg=0 guibg=Black
 hi Comment ctermfg=8 
 " Set string color to bold yellow index
 hi String ctermfg=11
-
 " Custom filetype overrides
-au BufNewFile,BufRead *.prc set filetype=cstol " LASP CSTOL
+"au BufNewFile,BufRead *.prc set filetype=cstol " LASP CSTOL
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " syntastic Configuration 
